@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#d9ff55">
+  <meta name="description" content="林沐，獨立視覺設計師與創意工作者。以清晰的想法，做出有個性的品牌與數位體驗。">
+  <title>林沐 Lin Mu — 視覺設計師</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171914;
+      --paper: #f7f8f2;
+      --lime: #d9ff55;
+      --muted: #65685f;
+      --line: rgba(23, 25, 20, .18);
+      --font: "DM Sans", "Noto Sans TC", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font); }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+
+    .topbar {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 6.2vw;
+      border-bottom: 1px solid var(--line);
+      background: var(--paper);
+    }
+    .wordmark { font-weight: 900; font-size: 19px; letter-spacing: 0; }
+    .wordmark span { font-weight: 500; margin-left: 8px; font-size: 13px; }
+    .nav { display: flex; align-items: center; gap: 34px; font-size: 13px; font-weight: 600; }
+    .nav a { transition: opacity .2s ease; }
+    .nav a:hover { opacity: .56; }
+    .nav .contact-link { border-bottom: 1px solid var(--ink); padding-bottom: 4px; }
+
+    .hero {
+      min-height: 640px;
+      height: min(760px, calc(100svh - 74px));
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      background: var(--lime);
+    }
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 7vw 4vw 8vw 10.3vw;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: #34745a; box-shadow: 0 0 0 4px rgba(52, 116, 90, .13); }
+    h1 { margin: 31px 0 24px; font-size: clamp(54px, 7vw, 102px); line-height: 1.08; letter-spacing: 0; font-weight: 900; }
+    h1 .english { display: block; font-family: "DM Sans", sans-serif; font-size: .79em; font-weight: 500; }
+    .intro { max-width: 380px; font-size: 16px; line-height: 1.9; color: #33372c; margin: 0; }
+    .hero-actions { display: flex; align-items: center; gap: 24px; margin-top: 37px; }
+    .primary-link { min-height: 48px; display: inline-flex; align-items: center; gap: 14px; padding: 0 19px; background: var(--ink); color: white; font-size: 13px; font-weight: 700; transition: transform .2s ease, background .2s ease; }
+    .primary-link:hover { transform: translateY(-3px); background: #34372d; }
+    .arrow { font-size: 17px; line-height: 1; }
+    .availability { font-size: 12px; color: #404437; }
+
+    .hero-visual { position: relative; min-width: 0; display: flex; align-items: center; justify-content: center; padding: 55px 9vw 66px 0; }
+    .portrait-frame { width: min(390px, 70%); aspect-ratio: .79; position: relative; z-index: 1; transform: rotate(3deg); background: #edeee7; box-shadow: 16px 18px 0 rgba(23, 25, 20, .12); }
+    .portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.72); }
+    .image-caption { position: absolute; z-index: 2; right: 6%; bottom: 13%; padding: 12px 15px; background: var(--paper); font-size: 11px; line-height: 1.6; transform: rotate(-4deg); }
+    .orbit-mark { position: absolute; right: 11%; top: 11%; width: 122px; aspect-ratio: 1; border: 1px solid rgba(23, 25, 20, .45); border-radius: 50%; display: grid; place-items: center; font-size: 11px; text-align: center; line-height: 1.5; transform: rotate(12deg); }
+    .hero-index { position: absolute; left: 6.2vw; bottom: 26px; font-size: 11px; font-weight: 600; }
+    .hero-index span { opacity: .56; }
+
+    .work { padding: 88px 10.3vw 108px; }
+    .section-heading { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .section-kicker { color: var(--muted); font-size: 11px; font-weight: 700; }
+    h2 { margin: 8px 0 0; font-size: clamp(32px, 4vw, 48px); line-height: 1.15; font-weight: 700; }
+    .all-work { font-size: 13px; font-weight: 600; border-bottom: 1px solid var(--ink); padding-bottom: 6px; white-space: nowrap; }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .project { min-width: 0; }
+    .project-image { display: block; width: 100%; aspect-ratio: 1.27; overflow: hidden; background: #e6e8df; }
+    .project-image img { width: 100%; height: 100%; display: block; object-fit: cover; transition: transform .55s cubic-bezier(.2,.7,.2,1); }
+    .project:hover .project-image img { transform: scale(1.045); }
+    .project-meta { display: flex; justify-content: space-between; align-items: start; padding-top: 15px; gap: 16px; }
+    .project-title { margin: 0; font-weight: 700; font-size: 18px; }
+    .project-type { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+    .project-year { color: var(--muted); font-size: 12px; }
+
+    .about-strip { background: var(--ink); color: var(--paper); padding: 70px 10.3vw; display: flex; justify-content: space-between; align-items: center; gap: 40px; }
+    .about-strip p { max-width: 590px; margin: 0; font-size: clamp(21px, 3vw, 34px); line-height: 1.55; font-weight: 500; }
+    .about-strip a { flex: 0 0 auto; border: 1px solid rgba(247,248,242,.5); padding: 14px 18px; font-size: 12px; transition: color .2s ease, background .2s ease; }
+    .about-strip a:hover { color: var(--ink); background: var(--paper); }
+    footer { display: flex; justify-content: space-between; gap: 20px; padding: 25px 6.2vw; font-size: 11px; color: var(--muted); }
+    .socials { display: flex; gap: 20px; color: var(--ink); font-weight: 600; }
+
+    @media (max-width: 760px) {
+      .topbar { height: 62px; padding: 0 22px; }
+      .wordmark { font-size: 17px; }
+      .nav { gap: 18px; font-size: 12px; }
+      .nav a:first-child { display: none; }
+      .hero { height: auto; min-height: 0; grid-template-columns: 1fr; }
+      .hero-copy { padding: 57px 25px 23px; }
+      h1 { font-size: clamp(58px, 15vw, 86px); margin: 25px 0 17px; }
+      .intro { max-width: 340px; font-size: 14px; }
+      .hero-actions { margin-top: 25px; }
+      .hero-visual { min-height: 330px; padding: 12px 45px 54px 0; }
+      .portrait-frame { width: min(250px, 63%); aspect-ratio: .9; }
+      .orbit-mark { width: 92px; right: 12%; top: 3%; font-size: 9px; }
+      .image-caption { right: 8%; bottom: 15%; font-size: 10px; }
+      .hero-index { left: 25px; bottom: 19px; }
+      .work { padding: 62px 24px 70px; }
+      .section-heading { align-items: end; margin-bottom: 24px; }
+      .all-work { font-size: 11px; }
+      .project-grid { grid-template-columns: 1fr; gap: 30px; }
+      .project-image { aspect-ratio: 1.25; }
+      .about-strip { padding: 48px 25px; display: block; }
+      .about-strip p { font-size: 23px; }
+      .about-strip a { display: inline-flex; margin-top: 24px; }
+      footer { padding: 20px 24px; flex-wrap: wrap; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="wordmark" href="#top" aria-label="林沐首頁">林沐<span>LIN MU</span></a>
+    <nav class="nav" aria-label="主選單">
+      <a href="#work">作品</a>
+      <a href="#about">關於</a>
+      <a class="contact-link" href="mailto:hello@linmu.design">聯絡 ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> 獨立視覺設計師・台北</div>
+        <h1 id="hero-title">讓想法<br>成為形狀<span class="english">Shape ideas.</span></h1>
+        <p class="intro">嗨，我是林沐。用品牌、影像與數位體驗，替好點子找到剛剛好的樣子。</p>
+        <div class="hero-actions">
+          <a class="primary-link" href="#work">看看我的作品 <span class="arrow">↘</span></a>
+          <span class="availability">2026 開放合作</span>
+        </div>
+      </div>
+      <div class="hero-visual" aria-label="設計師創作工作照">
+        <div class="orbit-mark">IDEAS<br>IN GOOD<br>COMPANY</div>
+        <div class="portrait-frame">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="陽光灑進充滿植物的創意工作室">
+        </div>
+        <div class="image-caption">工作室日常<br>台北，台灣</div>
+      </div>
+      <div class="hero-index">01 <span>／ 03</span></div>
+    </section>
+
+    <section class="work" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div><div class="section-kicker">SELECTED WORKS · 2024—26</div><h2 id="work-title">近期作品</h2></div>
+        <a class="all-work" href="mailto:hello@linmu.design">索取完整作品集 ↗</a>
+      </div>
+      <div class="project-grid">
+        <article class="project">
+          <a class="project-image" href="mailto:hello@linmu.design" aria-label="詢問山序茶所品牌設計"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="茶席上的茶杯與茶葉"></a>
+          <div class="project-meta"><div><h3 class="project-title">山序茶所</h3><p class="project-type">品牌識別・包裝設計</p></div><span class="project-year">2026</span></div>
+        </article>
+        <article class="project">
+          <a class="project-image" href="mailto:hello@linmu.design" aria-label="詢問日光唱片視覺設計"><img src="https://images.unsplash.com/photo-1461360228754-6e81c478b882?auto=format&amp;fit=crop&amp;w=1200&amp;q=85" alt="色彩鮮明的音樂海報與印刷品"></a>
+          <div class="project-meta"><div><h3 class="project-title">日光唱片</h3><p class="project-type">藝術指導・活動視覺</p></div><span class="project-year">2025</span></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-strip" id="about">
+      <p>好的設計不只好看，還能讓人感覺到：這正是我想找的。</p>
+      <a href="mailto:hello@linmu.design">一起聊聊你的想法 ↗</a>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 林沐 Lin Mu</span>
+    <div class="socials"><a href="mailto:hello@linmu.design">Email</a><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a></div>
+  </footer>
+</body>
+</html>
